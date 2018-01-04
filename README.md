@@ -1,10 +1,29 @@
 # generator-polymer-init-d2l-polymer-2-element
-> A template for creating BrightspaceUI polymer components.
+[BADGES:]
+[Bower version]
+[NPM version]
+[Build status]
+[Dependency Status]
+[Coveralls]
 
-## Installation
+A template for creating BrightspaceUI polymer-2 components.
 
-COMING SOON!
+## Quick start
 
-## License
+Options for getting started:
 
-Apache-2.0 ©
+* Clone the repo: `git clone https://github.com/Brightspace/generator-polymer-init-d2l-polymer-2-element.git`.
+
+[Any details or examples on how to use]
+
+## Documentation
+
+See [link to docs].
+
+## Versioning
+
+[Name of project] is maintained under [the Semantic Versioning guidelines](http://semver.org/).
+
+## Contributing
+
+Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
