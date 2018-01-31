@@ -10,7 +10,7 @@ A template for creating BrightspaceUI polymer-2 components.
 
 ## Quick start
 
-Options for getting started:
+Creating a project:
 
 * npm install -g yo
 
