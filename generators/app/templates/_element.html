@@ -1,0 +1,31 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<!--
+'d2l-<%= name %>'
+<%= description %>
+
+@demo demo/<%= name %>.hmtl
+-->
+
+<dom-module id="d2l-<%= name %>">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+
+		<slot></slot>
+	</template>
+	<script>
+		class <%= className %> extends Polymer.Element {
+			static get is() {
+				return 'd2l-<%= name %>';
+			}
+			constructor() {
+				super();
+			}
+		}
+		customElements.define(<%= className %>.is, <%= className %>);
+	</script>
+</dom-module>
