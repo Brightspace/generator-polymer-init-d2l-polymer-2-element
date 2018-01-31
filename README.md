@@ -22,7 +22,6 @@ Creating a project:
 
 * You should be able to just hit enter on the name (it will use a default of the folder name) and description (no default, will be left blank if you don't type a description)
 
-[Any details or examples on how to use]
 
 ## Documentation
 
