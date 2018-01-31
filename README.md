@@ -12,7 +12,15 @@ A template for creating BrightspaceUI polymer-2 components.
 
 Options for getting started:
 
-* Clone the repo: `git clone https://github.com/Brightspace/generator-polymer-init-d2l-polymer-2-element.git`.
+* npm install -g yo
+
+* Clone the repo: `git clone https://github.com/Brightspace/generator-polymer-init-d2l-polymer-2-element.git`
+
+* Using command line, go into the generator project folder, and enter commands: "npm i", followed by "npm link" (there may be some errors, but ignore for now)
+
+* Using command line, go into an empty project folder (e.g. empty-test), and type: yo polymer-init-d2l-polymer-2-element
+
+* You should be able to just hit enter on the name (it will use a default of the folder name) and description (no default, will be left blank if you don't type a description)
 
 [Any details or examples on how to use]
 
