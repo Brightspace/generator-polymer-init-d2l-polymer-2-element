@@ -100,6 +100,27 @@ module.exports = class extends Generator {
         name: this.props.name
       }
     );
+
+    this.fs.copy(
+      this.templatePath('test/.eslintrc.json'),
+      this.destinationPath('test/.eslintrc.json')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('test/index.html'),
+      this.destinationPath('test/index.html'),
+      {
+        name: this.props.name
+      }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('test/_element.html'),
+      this.destinationPath('test/d2l-' + this.props.name + '.html'),
+      {
+        name: this.props.name
+      }
+    );
   }
 
   install() {
