@@ -5,10 +5,13 @@ const yosay = require('yosay');
 const slugify = require('slugify');
 
 function camelCase(name) {
-  return name
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join('');
+  return (
+    'D2L' +
+    name
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join('')
+  );
 }
 
 module.exports = class extends Generator {
@@ -85,6 +88,10 @@ module.exports = class extends Generator {
         className: this.props.className
       }
     );
+
+    this.fs.copyTpl(this.templatePath('index.html'), this.destinationPath('index.html'), {
+      name: this.props.name
+    });
   }
 
   install() {
