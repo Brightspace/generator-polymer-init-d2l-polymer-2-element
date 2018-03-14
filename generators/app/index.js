@@ -65,6 +65,8 @@ module.exports = class extends Generator {
 
     this.fs.copy(this.templatePath('.travis.yml'), this.destinationPath('.travis.yml'));
 
+    this.fs.copy(this.templatePath('LICENSE'), this.destinationPath('LICENSE'));
+
     this.fs.copy(
       this.templatePath('wct.conf.json'),
       this.destinationPath('wct.conf.json')
