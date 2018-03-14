@@ -54,7 +54,12 @@ module.exports = class extends Generator {
       this.destinationPath('.editorconfig')
     );
 
-    this.fs.copy(this.templatePath('.eslintrc'), this.destinationPath('.eslintrc'));
+    this.fs.copy(
+      this.templatePath('.eslintrc.json'),
+      this.destinationPath('.eslintrc.json')
+    );
+
+    this.fs.copy(this.templatePath('polymer.json'), this.destinationPath('polymer.json'));
 
     this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
 
@@ -121,6 +126,10 @@ module.exports = class extends Generator {
         name: this.props.name
       }
     );
+
+    this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), {
+      name: this.props.name
+    });
   }
 
   install() {
