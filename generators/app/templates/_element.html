@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer-siren-mixins/siren-entity-mixin.html">
 
 <!--
 'd2l-<%= name %>'
@@ -14,16 +15,24 @@
 				display: block;
 			}
 		</style>
-
+		<strong>[[title]]</title>
 		<slot></slot>
 	</template>
 	<script>
-		class <%= className %> extends Polymer.Element {
+		class <%= className %> extends window.D2L.Polymer.Mixins.SirenEntityMixin(Polymer.Element) {
 			static get is() {
 				return 'd2l-<%= name %>';
 			}
-			constructor() {
-				super();
+			static get properties(){
+				return {
+					title: {
+						type: Object,
+						computed: '_getTitle(entity)'
+					}
+				};
+			}
+			_getTitle(entity){
+				return entity && entity.properties && entity.properties.title || '';
 			}
 		}
 		customElements.define(<%= className %>.is, <%= className %>);
