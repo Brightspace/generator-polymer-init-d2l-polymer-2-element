@@ -1,13 +1,5 @@
 <link rel="import" href="../polymer/polymer-element.html">
 <link rel="import" href="../polymer-siren-mixins/siren-entity-mixin.html">
-
-<!--
-'d2l-<%= name %>'
-<%= description %>
-
-@demo demo/index.hmtl
--->
-
 <dom-module id="d2l-<%= name %>">
 	<template>
 		<style>
@@ -18,7 +10,12 @@
 		<strong>[[title]]</title>
 		<slot></slot>
 	</template>
+
 	<script>
+	/*
+		@mixes window.D2L.Polymer.Mixins.SirenEntityMixin
+		@demo demos/index.html
+ 	*/
 		class <%= className %> extends window.D2L.Polymer.Mixins.SirenEntityMixin(Polymer.Element) {
 			static get is() {
 				return 'd2l-<%= name %>';
