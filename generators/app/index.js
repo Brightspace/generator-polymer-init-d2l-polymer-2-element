@@ -108,6 +108,14 @@ module.exports = class extends Generator {
       }
     );
 
+    this.fs.copyTpl(
+      this.templatePath('demo/data/example.json'),
+      this.destinationPath('demo/data/example.json'),
+      {
+        name: this.props.name
+      }
+    );
+
     this.fs.copy(
       this.templatePath('test/.eslintrc.json'),
       this.destinationPath('test/.eslintrc.json')
