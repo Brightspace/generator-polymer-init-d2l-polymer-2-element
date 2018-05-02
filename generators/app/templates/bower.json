@@ -3,7 +3,8 @@
   "description": "<%= description %>",
   "license": "Apache-2.0",
   "main": "d2l-<%= name %>.html",
-  "homepage": "https://github.com/BrightspaceUI/<%= name %>",
+  "homepage":
+    "https://github.com/Brightspace<% if (isBrightspaceUI) { %>UI <% } %>/<%= name %>",
   "ignore": [
     "test",
     ".editorconfig",

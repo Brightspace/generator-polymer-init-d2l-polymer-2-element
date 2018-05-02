@@ -7,20 +7,20 @@
 				display: block;
 			}
 		</style>
-		<strong>[[title]]</title>
+		<strong>[[title]]</strong>
 		<slot></slot>
 	</template>
 
 	<script>
-	/*
-		@mixes window.D2L.Polymer.Mixins.SirenEntityMixin
-		@demo demos/index.html
- 	*/
-		class <%= className %> extends window.D2L.Polymer.Mixins.SirenEntityMixin(Polymer.Element) {
+		/*
+			@mixes SirenEntityMixin
+			@demo demos/index.html
+	 	*/
+		class <%= className %> extends D2L.Polymer.Mixins.SirenEntityMixin(Polymer.Element) {
 			static get is() {
 				return 'd2l-<%= name %>';
 			}
-			static get properties(){
+			static get properties() {
 				return {
 					title: {
 						type: Object,
@@ -28,7 +28,7 @@
 					}
 				};
 			}
-			_getTitle(entity){
+			_getTitle(entity) {
 				return entity && entity.properties && entity.properties.title || '';
 			}
 		}

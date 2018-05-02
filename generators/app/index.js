@@ -38,12 +38,21 @@ module.exports = class extends Generator {
         message:
           'Please enter a description of the project (e.g. Polymer-based web component for D2L text inputs):',
         default: ''
+      },
+      {
+        type: 'confirm',
+        name: 'isBrightspaceUI',
+        message: 'Is this a BrightspaceUI project?'
       }
     ];
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
+      if (props.name.startsWith('d2l-')) {
+        props.name = props.name.substring(4);
+      }
       props.className = camelCase(props.name);
+
       this.props = props;
     });
   }
@@ -77,13 +86,15 @@ module.exports = class extends Generator {
       this.destinationPath('package.json'),
       {
         name: this.props.name,
-        description: this.props.description
+        description: this.props.description,
+        isBrightspaceUI: this.props.isBrightspaceUI
       }
     );
 
     this.fs.copyTpl(this.templatePath('bower.json'), this.destinationPath('bower.json'), {
       name: this.props.name,
-      description: this.props.description
+      description: this.props.description,
+      isBrightspaceUI: this.props.isBrightspaceUI
     });
 
     this.fs.copyTpl(
@@ -138,7 +149,8 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), {
-      name: this.props.name
+      name: this.props.name,
+      isBrightspaceUI: this.props.isBrightspaceUI
     });
   }
 

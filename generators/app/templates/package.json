@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BrightspaceUI/<%= name %>.git"
+    "url":
+      "https://github.com/Brightspace<% if (isBrightspaceUI) { %>UI <% } %>/<%= name %>"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
