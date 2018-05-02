@@ -2,9 +2,9 @@
 
 [Polymer](https://www.polymer-project.org)-based web component for D2L <%= name %>.
 
-
+<% if (isBrightspaceUI) { %>
 For further information on this and other Brightspace UI components, see the docs at [ui.developers.brightspace.com](http://ui.developers.brightspace.com/).
-
+<% } %>
 ## Installation
 
 ```shell
@@ -26,7 +26,7 @@ npm install -g polymer-cli
 To start a [local web server](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#serve) that hosts the demo page and tests:
 
 ```shell
-polymer serve
+polymer analyze > analysis.json && polymer serve
 ```
 
 To lint ([eslint](http://eslint.org/) and [Polymer lint](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#lint)):
@@ -46,4 +46,3 @@ To lint AND run local unit tests:
 ```shell
 npm test
 ```
-
