@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../polymer-siren-mixins/siren-entity-mixin.html">
+<% if (isSirenEntity) { %><link rel="import" href="../polymer-siren-mixins/siren-entity-mixin.html"><% } %>
 <dom-module id="d2l-<%= name %>">
 	<template>
 		<style>
@@ -12,26 +12,29 @@
 	</template>
 
 	<script>
-		/*
-			@mixes SirenEntityMixin
+		/*<% if (isSirenEntity) { %>
+			@mixes SirenEntityMixin<% } %>
 			@demo demos/index.html
 	 	*/
-		class <%= className %> extends D2L.Polymer.Mixins.SirenEntityMixin(Polymer.Element) {
+		class <%= className %> extends <% if (isSirenEntity) { %>D2L.Polymer.Mixins.SirenEntityMixin(Polymer.Element)<% } else {%>Polymer.Element<% } %> {
 			static get is() {
 				return 'd2l-<%= name %>';
 			}
 			static get properties() {
 				return {
-					title: {
+					<% if (isSirenEntity) { %>title: {
 						type: Object,
 						computed: '_getTitle(entity)'
-					}
+					}<% } else { %>title: {
+						type: String,
+						value: 'I am a title!'
+					}<% } %>
 				};
-			}
-			_getTitle(entity) {
+			}<% if (isSirenEntity) { %>
+				_getTitle(entity) {
 				return entity && entity.properties && entity.properties.title || '';
-			}
-		}
+			}<% }
+%>		}
 		customElements.define(<%= className %>.is, <%= className %>);
 	</script>
 </dom-module>

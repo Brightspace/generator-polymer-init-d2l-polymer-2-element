@@ -18,7 +18,7 @@
 			<h3>Simple <%= name %></h3>
 			<demo-snippet>
 				<template>
-					<d2l-<%= name %> href="data/example.json" token="foo"></d2l-<%= name %>>
+					<d2l-<%= name %> <%if (isSirenEntity){ %>href="data/example.json" token="foo"<% } %>></d2l-<%= name %>>
 				</template>
 			</demo-snippet>
 

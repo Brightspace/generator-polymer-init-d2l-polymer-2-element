@@ -43,6 +43,11 @@ module.exports = class extends Generator {
         type: 'confirm',
         name: 'isBrightspaceUI',
         message: 'Is this a BrightspaceUI project?'
+      },
+      {
+        type: 'confirm',
+        name: 'isSirenEntity',
+        message: 'Is this project backed by a siren entity?'
       }
     ];
 
@@ -94,7 +99,8 @@ module.exports = class extends Generator {
     this.fs.copyTpl(this.templatePath('bower.json'), this.destinationPath('bower.json'), {
       name: this.props.name,
       description: this.props.description,
-      isBrightspaceUI: this.props.isBrightspaceUI
+      isBrightspaceUI: this.props.isBrightspaceUI,
+      isSirenEntity: this.props.isSirenEntity
     });
 
     this.fs.copyTpl(
@@ -103,7 +109,8 @@ module.exports = class extends Generator {
       {
         name: this.props.name,
         description: this.props.description,
-        className: this.props.className
+        className: this.props.className,
+        isSirenEntity: this.props.isSirenEntity
       }
     );
 
@@ -115,17 +122,19 @@ module.exports = class extends Generator {
       this.templatePath('demo/index.html'),
       this.destinationPath('demo/index.html'),
       {
-        name: this.props.name
+        name: this.props.name,
+        isSirenEntity: this.props.isSirenEntity
       }
     );
-
-    this.fs.copyTpl(
-      this.templatePath('demo/data/example.json'),
-      this.destinationPath('demo/data/example.json'),
-      {
-        name: this.props.name
-      }
-    );
+    if (this.props.isSirenEntity) {
+      this.fs.copyTpl(
+        this.templatePath('demo/data/example.json'),
+        this.destinationPath('demo/data/example.json'),
+        {
+          name: this.props.name
+        }
+      );
+    }
 
     this.fs.copy(
       this.templatePath('test/.eslintrc.json'),
@@ -136,7 +145,8 @@ module.exports = class extends Generator {
       this.templatePath('test/index.html'),
       this.destinationPath('test/index.html'),
       {
-        name: this.props.name
+        name: this.props.name,
+        isSirenEntity: this.props.isSirenEntity
       }
     );
 
@@ -144,7 +154,8 @@ module.exports = class extends Generator {
       this.templatePath('test/_element.html'),
       this.destinationPath('test/d2l-' + this.props.name + '.html'),
       {
-        name: this.props.name
+        name: this.props.name,
+        isSirenEntity: this.props.isSirenEntity
       }
     );
 

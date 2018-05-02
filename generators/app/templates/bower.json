@@ -16,8 +16,8 @@
     "wct.conf.json"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0",
-    "polymer-siren-mixins": "Brightspace/polymer-siren-mixins"
+    "polymer": "Polymer/polymer#^2.6.0"<% if (isSirenEntity) { %>,
+    "polymer-siren-mixins": "Brightspace/polymer-siren-mixins"<% } %>
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^3.0.0",
