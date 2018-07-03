@@ -60,7 +60,7 @@ class ElementGenerator extends Generator {
 			this.props.shortName = this.props.name.substr(4);
 			this.props.elementClassName = this.props.shortName.replace(
 				/(^|-)(\w)/g,
-				function( match, p0, p1) {
+				function(match, p0, p1) {
 					return p1.toUpperCase();
 				}
 			);

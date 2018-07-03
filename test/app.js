@@ -18,7 +18,6 @@ describe('generator-polymer-init-d2l-polymer-2-element', () => {
 			'.eslintrc.json',
 			'.gitignore',
 			'.travis.yml',
-			'all-imports.html',
 			'bower.json',
 			'CODEOWNERS',
 			'd2l-foo.html',
