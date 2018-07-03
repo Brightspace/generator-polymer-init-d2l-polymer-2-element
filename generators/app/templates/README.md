@@ -14,11 +14,11 @@ bower install <%= name %>
 
 ## Usage
 
-Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `<%= name %>.html`:
+Include the [webcomponents.js](http://webcomponents.org/polyfills/) polyfill loader (for browsers who don't natively support web components), then import `<%= name %>.html`:
 
 ```html
 <head>
-	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+	<script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 	<link rel="import" href="bower_components/<%= name %>/<%= name %>.html">
 </head>
 ```
@@ -27,7 +27,7 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyf
 ```
 <custom-element-demo>
   <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../webcomponentsjs/webcomponents-loader.js"></script>
     <link rel="import" href="../d2l-typography/d2l-typography.html">
     <link rel="import" href="<%= name %>.html">
     <custom-style include="d2l-typography">
