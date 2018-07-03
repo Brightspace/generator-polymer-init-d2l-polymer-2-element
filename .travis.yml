@@ -1,2 +1,10 @@
 language: node_js
 node_js: node
+deploy:
+  provider: npm
+  email: d2ltravisdeploy@d2l.com
+  api_key:
+    secure: ONxEcrtfN4ftGh6N3GNcus/gKbqW3jzP3rkkUVdyHCIw0Bg7SzsU2mZ/yo+MZ5ba+xTnIMXtAJg6I2wnwnqq3whjp5MZtVyD/IiSoelya1j6lkfA/RM0aBdG42uraNPibjFGLFNH7/PHQLMP6PFfzaz6Jfl+gb36n/Xh9CywbmeKiwQCMMW8fBNDsjIlPvMvA0ftU55kS9RwXdHMUdeR/VCNFJLV7oLTgZtX3yguQu+9NQCaELg6YmTXBO7+nTfTtDtpW1rTiGHkfL8YH6Z7fZgGmet5Vcho0Rxw/Iq6xMS4WEp+0Ak58URcVz+ryY5Z6mNR4fo061ru6vbdPvS5TvtbSXhL+Ok3WDrnazjLgPU0nEcQOniYAnc7Wp3HKK6eL53AhuHmCbvzPIojDeIKlnR7ax+I0CR9+MU4Zj/ZH3UhUD76GLZr0Hgfs+stJjNYCXIK9xWbaFOAIlCd/X0JtiyV8f3gu4E6SrIaghrLwOLTvMsP8uYDR/WBWlfxheWrty3ydVfOix69GHxbAlaqxfkdbV+gSTHdeCmWkMA6egdHbPoi7BtSoP+R4rQkkQF+ppbYUPRQJMV8b7g/Z2WzWgfR9ajg9XJVJu5RlSDVJnxK/J04L+mA29+L18r63xi4x5dWz7qiQyUQdQsIyAi30xPqg1+rxaqRVP9TZsOJdNA=
+  on:
+    tags: true
+    repo: Brightspace/generator-polymer-init-d2l-polymer-2-element
