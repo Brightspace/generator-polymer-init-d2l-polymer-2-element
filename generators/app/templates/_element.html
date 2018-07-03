@@ -1,31 +1,37 @@
 <link rel="import" href="../polymer/polymer-element.html">
 
-<!--
-'d2l-<%= name %>'
-<%= description %>
-
-@demo demo/index.hmtl
--->
-
-<dom-module id="d2l-<%= name %>">
-	<template>
+<dom-module id="<%= name %>">
+	<template strip-whitespace>
 		<style>
 			:host {
-				display: block;
+				display: inline-block;
 			}
 		</style>
-
-		<slot></slot>
+		<h2>Hello [[prop1]]!</h2>
 	</template>
 	<script>
-		class <%= className %> extends Polymer.Element {
-			static get is() {
-				return 'd2l-<%= name %>';
+		/**
+		 * `<<%= name %>>`
+		 * <%= description %>
+		 * @customElement
+		 * @polymer
+		 * @demo demo/index.hmtl
+		 */
+		class <%= elementClassName %> extends Polymer.Element {
+			static get is() { return '<%= name %>'; }
+			static get properties() {
+				return {
+					/* Property1 description for documentation */
+					prop1: {
+						type: String,
+						value: '<%= name %>'
+					}
+				};
 			}
 			constructor() {
 				super();
 			}
 		}
-		customElements.define(<%= className %>.is, <%= className %>);
+		customElements.define(<%= elementClassName %>.is, <%= elementClassName %>);
 	</script>
 </dom-module>

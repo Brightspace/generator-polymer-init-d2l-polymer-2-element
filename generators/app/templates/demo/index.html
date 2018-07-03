@@ -3,25 +3,32 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-		<title>d2l-<%= name %> demo</title>
-		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		<title><%= name %> demo</title>
+		<script src="../../webcomponentsjs/webcomponents-loader.js"></script>
 		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
 		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-		<link rel="import" href="../d2l-<%= name %>.html">
+		<link rel="import" href="../../d2l-typography/d2l-typography.html">
+		<link rel="import" href="../<%= name %>.html">
 		<custom-style>
 			<style is="custom-style" include="demo-pages-shared-styles"></style>
 		</custom-style>
+		<custom-style include="d2l-typography">
+			<style is="custom-style" include="d2l-typography"></style>
+		</custom-style>
+		<style>
+			html {
+				font-size: 20px;
+			}
+		</style>
 	</head>
-	<body>
+	<body unresolved class="d2l-typography">
 		<div class="vertical-section-container centered">
-
-			<h3>Simple <%= name %></h3>
+			<h3><%= name %></h3>
 			<demo-snippet>
 				<template>
-					<d2l-<%= name %>></d2l-<%= name %>>
+					<<%= name %>></<%= name %>>
 				</template>
 			</demo-snippet>
-
 		</div>
 	</body>
 </html>

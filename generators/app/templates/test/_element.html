@@ -3,26 +3,25 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-		<title>d2l-<%= name %> test</title>
-		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		<title><%= name %> test</title>
+		<script src="../../webcomponentsjs/webcomponents-loader.js"></script>
 		<script src="../../web-component-tester/browser.js"></script>
-		<link rel="import" href="../d2l-<%= name %>.html">
+		<link rel="import" href="../<%= name %>.html">
 	</head>
 	<body>
 		<test-fixture id="basic">
 			<template>
-				<d2l-<%= name %>></d2l-<%= name %>>
+				<<%= name %>></<%= name %>>
 			</template>
 		</test-fixture>
-
 		<script>
-			describe('d2l-<%= name %>', function() {
-				var elem;
-				describe('basic', function() {
-					it('should instantiate the element', function() {
-						elem = fixture('basic');
-						expect(elem.is).to.equal('d2l-<%= name %>');
-					});
+			suite('<%= name %>', () => {
+				test('instantiating the element works', () => {
+					const element = fixture('basic');
+					assert.equal(element.prop1, '<%= name %>');
+					const elementShadowRoot = element.shadowRoot;
+					const elementHeader = elementShadowRoot.querySelector('h2');
+					assert.equal(elementHeader.innerHTML, 'Hello <%= name %>!');
 				});
 			});
 		</script>
