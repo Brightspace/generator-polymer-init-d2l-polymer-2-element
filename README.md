@@ -13,7 +13,7 @@ With the template, you get:
 * Demo page for the element
 * Test page for the element
 * Travis CI ready-to-go
-* Local tests that do linting using ESLint, `polymer lint` and unit tests using Chome headless
+* Local tests that do linting using ESLint, `polymer lint` and unit tests using Chrome headless
 * Cross-browser testing from Travis CI using Sauce Labs
 * README
 
@@ -43,6 +43,12 @@ polymer init d2l-polymer-2-element
 ```
 
 That's it! Follow the instructions in the `README` to learn how to get a local development server running and run the tests.
+
+### Sauce Labs
+
+To do cross-browser testing using Sauce Labs, the API key needs to be encrypted into the `.travis.yml` file.
+
+To learn more about how to set this up, see the [Testing](https://github.com/BrightspaceUI/guide/wiki/Testing) section of The Guide.
 
 ## Developing and Contributing
 
