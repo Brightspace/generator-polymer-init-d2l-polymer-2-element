@@ -1,6 +1,6 @@
 {
   "name": "generator-polymer-init-d2l-polymer-2-element",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Template for creating BrightspaceUI Polymer 2 class-based elements",
   "repository": {
     "type": "git",
